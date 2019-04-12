@@ -1,16 +1,31 @@
 import {Injectable} from "@angular/core";
+import {Machtiging, Periode} from "../model/machtiging";
 
-@Injectable({})
+@Injectable({providedIn: 'root'})
 export class DatabaseService {
 
-  bewaarMij: string;
+  constructor() {
+    for(let i = 0; i < 10; i++) {
+      let machtiging: Machtiging = new Machtiging();
+      machtiging.instelling = 'naamInstelling' + i;
 
-  // roep bv aan met 'bewaarMij' en je krijgt de waarde van dat veld terug
+      let periode: Periode = new Periode();
+      periode.van = '01-01-2020';
+      periode.tot = '02-01-2020';
+      machtiging.periode = periode;
+      machtiging.titel = 'titel' + i;
+
+      this.machtingen.push(machtiging);
+    }
+  }
+
+  machtingen: [Machtiging];
+
   getData(soort) {
     return this[soort];
   }
-  // roep bv aan met 'bewaarMij' + id en je krijgt de waarde van die lijst.element terug
-  getDataList(soortLijst, id) {
+
+  getDataListItem(soortLijst, id) {
     return this[soortLijst][id];
   }
 }

@@ -1,13 +1,15 @@
 import {NgModule} from '@angular/core';
-import {IndividuLoginComponent} from "./individu/individu.login.component";
-import {InstellingLoginComponent} from "./instelling/instelling.login.component";
-import {LoginComponent} from "./login.component";
+import {ControleerComponent} from "./controleer/controleer.component";
+import {BeheerComponent} from "./beheer/beheer.component";
+import {MaakComponent} from "./maak/maak.component";
+import {StartComponent} from "./start.component";
 
 @NgModule({
   declarations: [
-    IndividuLoginComponent,
-    InstellingLoginComponent,
-    LoginComponent
+    BeheerComponent,
+    MaakComponent,
+    ControleerComponent,
+    StartComponent
   ],
   imports: [],
   providers: []

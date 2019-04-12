@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {IndividuLoginComponent} from "./pages/individu/individu.login.component";
-import {InstellingLoginComponent} from "./pages/instelling/instelling.login.component";
-import {LoginComponent} from "./pages/login.component";
+import {BeheerComponent} from "./pages/beheer/beheer.component";
+import {ControleerComponent} from "./pages/controleer/controleer.component";
+import {MaakComponent} from "./pages/maak/maak.component";
+import {StartComponent} from "./pages/start.component";
 
 const routes: Routes = [
-  {path: 'login-individu', component: IndividuLoginComponent},
-  {path: 'login-instelling', component: InstellingLoginComponent},
-  {path: '', component: LoginComponent}
+  {path: 'maak', component: MaakComponent},
+  {path: 'beheer', component: BeheerComponent},
+  {path: 'controleer', component: ControleerComponent},
+  {path: '', component: StartComponent}
 ];
 
 @NgModule({
