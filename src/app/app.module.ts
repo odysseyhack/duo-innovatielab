@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {LoginComponent} from "./pages/login.component";
 import {PagesModule} from "./pages/pages.module";
 
 @NgModule({
@@ -16,7 +15,7 @@ import {PagesModule} from "./pages/pages.module";
     PagesModule
   ],
   providers: [],
-  bootstrap: [LoginComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

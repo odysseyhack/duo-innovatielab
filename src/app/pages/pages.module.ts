@@ -9,8 +9,8 @@ import {LoginComponent} from "./login.component";
     InstellingLoginComponent,
     LoginComponent
   ],
-  imports: [
-  ],
+  imports: [],
   providers: []
 })
-export class PagesModule { }
+export class PagesModule {
+}
