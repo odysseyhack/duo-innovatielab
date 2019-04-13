@@ -1,14 +1,11 @@
 import {Component} from '@angular/core';
+import {Badge} from '../../shared/model/badge';
 
 @Component({
   templateUrl: './maak.component.html'
 })
 export class MaakComponent {
-  badge = {
-    type: 0,
-    firstname: 'John',
-    lastname: 'Doe'
-  };
+  badge = new Badge();
 
   badgeData = '';
 
@@ -18,5 +15,16 @@ export class MaakComponent {
 
   store() {
     console.log(this.badgeData);
+  }
+
+  makeId(length) {
+    let text = '';
+    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+    for (let i = 0; i < length; i++) {
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+
+    return text;
   }
 }
