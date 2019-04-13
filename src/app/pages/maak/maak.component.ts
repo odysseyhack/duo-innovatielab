@@ -7,12 +7,14 @@ import {Badge} from '../../shared/model/badge';
 })
 export class MaakComponent {
   badge = new Badge();
+  salt = '';
 
   badgeData = '';
 
   private _ethereum: any;
 
   constructor(@Inject(Ethereum) private ethereum: Ethereum) {
+    this.salt = this.makeId(10);
     this._ethereum = ethereum;
   }
 
