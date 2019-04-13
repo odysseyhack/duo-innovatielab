@@ -16,7 +16,6 @@ export class OverzichtBadgesComponent implements OnInit {
 
   ngOnInit(): void {
     this.badges = this.databaseService.getData('badges');
-
   }
 
   navigeerNaar(event: Event, pagina: string) {

@@ -6,13 +6,13 @@ import {Badge} from "../model/badge";
 declare let require: any;
 
 const badges = require('../../../assets/json/badges.json');
+const machtigingen = require('../../../assets/json/machtigingen.json');
 
 @Injectable({providedIn: 'root'})
 export class DatabaseService {
 
   badges: [Badge] = badges;
-
-  machtingen: [Machtiging];
+  machtigingen: [Machtiging] = machtigingen;
 
   getData(soort) {
     return this[soort];
@@ -24,5 +24,9 @@ export class DatabaseService {
 
   saveBadge(badge: Badge) {
     this.badges.push(badge);
+  }
+
+  saveMachtiging(machtiging: Machtiging) {
+    this.machtigingen.push(machtiging);
   }
 }

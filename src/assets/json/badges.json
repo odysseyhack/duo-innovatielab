@@ -22,7 +22,7 @@
   {
     "name": "Nederlanderschap",
     "shortDescription": "Dit is de badge die aangeeft dat je Nederlander bent",
-    "issuer": "Nederlandse overheid",
+    "issuer": "GBA",
     "recipient": "Henk de Haver",
     "issueDate": "01-04-2000",
     "saltPrivate": "uniekeSaltPrivate3",
