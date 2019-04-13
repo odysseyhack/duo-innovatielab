@@ -5,9 +5,60 @@
   </ol>
 </nav>
 
-<div style="text-align:center">
-  <h1>
-    Controleer badge
-  </h1>
 
-</div>
+
+    <div class="align-self-center">
+      <h1>Create request</h1>
+      <form>
+        <div class="form-group">
+          <label for="typeInput">Type Badge</label>
+          <select class="form-control" id="typeInput" name="badgeType" (change)="setRequestBadge($event)">
+            <option value="0">Make a choice..</option>
+            <option value="Nationality">Nationality</option>
+            <option value="Diploma">Diploma</option>
+            <option disabled value="3">Income</option>
+          </select>
+        </div>
+        <div *ngIf="type === 'Nationality'" class="form-group">
+          <label for="typeInput">Which Nationality</label>
+          <select class="form-control" id="typeInput" name="nationalityType" (change)="setRequestRedenNationaliteit($event)" [(ngModel)]="nationalityType">
+            <option value="Dutch">Dutch</option>
+            <option value="American">American</option>
+          </select>
+        </div>
+
+
+        <div *ngIf="type === 'Nationality'"  class="form-group">
+          <label for="typeInput">Which reason for request</label>
+          <select class="form-control" id="typeInput" name="nationalityType" (change)="setRequestRedenNationaliteit($event)" [(ngModel)]="nationalityType">
+            <option value="Dutch">To determine height of Student loan</option>
+            <option value="American">To determine height of Complementary Student loan</option>
+          </select>
+        </div>
+
+        <div *ngIf="type === 'Nationality'"  class="form-group">
+          <label for="typeInput">Implications</label><br>
+          <input type="checkbox" value="Financiel risks" (click)="setImplications($event)"/><label>Financiel risks:</label><br>
+          <input type="checkbox" value="Legal risks" (click)="setImplications($event)"/><label>Legal risks:</label>
+
+        </div>
+
+
+<!--        <div *ngIf="type === 'Diploma'" class="form-group">-->
+<!--          <label for="typeInput">Diploma Badge</label>-->
+<!--          <select class="form-control" id="typeInput" name="diplomaType" (change)="setRequestRedenDiploma($event)" [(ngModel)]="diplomaType">-->
+<!--            <option value="MsC Computer Science">MsC Computer Science</option>-->
+<!--            <option value="RvR Quantum computing">RvR Quantum computing</option>-->
+<!--          </select>-->
+<!--        </div>-->
+
+
+
+
+        <div class="form-group">
+          <button (click)="create()" class="btn btn-info">Create</button>
+        </div>
+
+
+      </form>
+    </div>
