@@ -1,15 +1,20 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Badge} from "../../shared/model/badge";
-
-declare let require: any;
-
-const badges = require('../../../assets/json/badges.json');
+import {DatabaseService} from "../../shared/service/database.service";
 
 @Component({
   templateUrl: './overzicht-badges.component.html'
 })
-export class OverzichtBadgesComponent {
+export class OverzichtBadgesComponent implements OnInit {
 
-  badges: [Badge] = badges;
+  badges: [Badge];
+
+  constructor(private databaseService: DatabaseService) {
+  }
+
+  ngOnInit(): void {
+    this.badges = this.databaseService.getData('badges');
+
+  }
 
 }

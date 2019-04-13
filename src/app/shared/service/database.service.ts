@@ -1,23 +1,16 @@
 import {Injectable} from "@angular/core";
-import {Machtiging, Periode} from "../model/machtiging";
+import {Machtiging} from "../model/machtiging";
+import {Badge} from "../model/badge";
+
+
+declare let require: any;
+
+const badges = require('../../../assets/json/badges.json');
 
 @Injectable({providedIn: 'root'})
 export class DatabaseService {
 
-  constructor() {
-    for(let i = 0; i < 10; i++) {
-      let machtiging: Machtiging = new Machtiging();
-      machtiging.instelling = 'naamInstelling' + i;
-
-      let periode: Periode = new Periode();
-      periode.van = '01-01-2020';
-      periode.tot = '02-01-2020';
-      machtiging.periode = periode;
-      machtiging.titel = 'titel' + i;
-
-      this.machtingen.push(machtiging);
-    }
-  }
+  badges: [Badge] = badges;
 
   machtingen: [Machtiging];
 
@@ -27,5 +20,9 @@ export class DatabaseService {
 
   getDataListItem(soortLijst, id) {
     return this[soortLijst][id];
+  }
+
+  saveBadge(badge: Badge) {
+    this.badges.push(badge);
   }
 }
