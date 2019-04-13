@@ -7,5 +7,6 @@ export class Badge {
   saltPrivate: string;
   saltPublic: string;
   status: string;
+  address: string;
 }
 

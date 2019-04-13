@@ -10,7 +10,6 @@ import {DatabaseService} from "../../shared/service/database.service";
 export class MaakComponent {
   badge = new Badge();
   salt = '';
-
   badgeData = '';
   private _ethereum: any;
 
@@ -20,16 +19,18 @@ export class MaakComponent {
     this.salt = this.makeId(10);
     this._ethereum = ethereum;
   }
+
   create() {
     this.badgeData = JSON.stringify(this.badge);
   }
 
   store() {
+    let that = this;
     console.log(this.badgeData);
-    this.databaseService.saveBadge(this.badge);
     const contractAddress = this._ethereum.storeOnBlockchain(this.makeId(32));
-    contractAddress.then(function(result) {
-      alert(result);
+    contractAddress.then(function (result) {
+      that.badge.address = result;
+      that.databaseService.saveBadge(that.badge);
     });
 
   }
