@@ -24,6 +24,15 @@ export class MaakComponent {
     this.badgeData = JSON.stringify(this.badge);
   }
 
+  hashBadge(hash) {
+    let h = 0xdeadbeef;
+    for (let i = 0; i < hash.length; i++) {
+      h = Math.imul(h ^ hash.charCodeAt(i), 2654435761);
+    }
+    let result = (h ^ h >>> 16) >>> 0;
+    return result.toString();
+  };
+
   store() {
     let that = this;
     console.log(this.badgeData);
@@ -31,6 +40,12 @@ export class MaakComponent {
     contractAddress.then(function(result) {
       that.badge.address = result;
       that.databaseService.saveBadge(that.badge);
+
+      let hash = that.hashBadge(that.badgeData + that.badge.saltPrivate);
+      console.log("Badge hash = " + hash);
+      sessionStorage.setItem(result, hash);
+
+      document.getElementById("contractAddress").innerHTML = "Contract address on blockchain: " + result;
     });
 
   }
@@ -42,9 +57,9 @@ export class MaakComponent {
     for (let i = 0; i < length; i++) {
       text += possible.charAt(Math.floor(Math.random() * possible.length));
     }
-
     return text;
   }
+
 
   navigeerNaar(event, pagina) {
     event.preventDefault();

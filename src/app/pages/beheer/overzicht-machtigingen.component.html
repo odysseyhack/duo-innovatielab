@@ -18,7 +18,7 @@
         <div *ngIf="machtiging.status === 'invalid'" class="card-header">INGETROKKEN: {{machtiging.titel}}</div>
         <div *ngIf="machtiging.status !== 'invalid'" class="card-header">{{machtiging.titel}}</div>
         <div class="card-body text-dark">
-          <h5 class="card-title">Gemachtigde: {{machtiging.gemachtigde}}</h5>
+          <h5 class="card-title">Gemachtigd door: {{machtiging.gemachtigde}}</h5>
           <p class="card-text">Van: {{machtiging.periode.van}}</p>
           <p class="card-text">Tot: {{machtiging.periode.tot}}</p>
         </div>

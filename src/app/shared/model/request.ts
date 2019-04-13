@@ -6,5 +6,6 @@ export class Request {
   subType: string;
   reason: string;
   implications: any[];
+  jsonData: string;
 }
 

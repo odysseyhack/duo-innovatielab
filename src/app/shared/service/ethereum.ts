@@ -55,4 +55,13 @@ export class Ethereum {
 
       });
   }
+
+  async verifyOnBlockchain(contractAddress: string, hash: string) {
+    this._accounts = await this._web3.eth.getAccounts();
+
+    const deployedBadge = new this._web3.eth.Contract(abi, contractAddress);
+
+    return deployedBadge.methods.verify(hash).call({from: this._accounts[0]});
+
+  }
 }

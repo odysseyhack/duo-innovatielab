@@ -54,6 +54,14 @@ export class DatabaseService {
     }
   }
 
+  getBadgeBySecretKey(key) {
+    for(let i = 0; i < badges.length; i++) {
+      if(this.badges[i].saltPrivate == key) {
+        return this.badges[i];
+      }
+    }
+  }
+
   saveBadge(badge: Badge) {
     this.badges.push(badge);
   }

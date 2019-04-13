@@ -28,9 +28,10 @@
           <input type="text" class="form-control" name="name" [(ngModel)]="badge.name" id="nameInput"
                  placeholder="Badge for Dutch citizenship">
         </div>
-        <div class="form-group" *ngIf="badgeData != ''">
+        <div class="form-group">
           <label for="shortDescriptionInput">Short description</label>
-          <textarea class="form-control" id="shortDescriptionInput" name="description" [value]="badge.shortDescription">
+          <textarea class="form-control" id="shortDescriptionInput" name="description" [(ngModel)]="badge.shortDescription"
+                    placeholder="This badge is for...">
           </textarea>
         </div>
         <div class="form-group">
@@ -61,11 +62,15 @@
 
           <div class="form-group">
             <label for="secretInput">Secret</label>
-            <input class="form-control" id="secretInput" name="secret" [value]="salt">
+            <input class="form-control" id="secretInput" name="secret" [(ngModel)]="badge.saltPrivate">
           </div>
 
           <div class="form-group">
             <button (click)="store()" class="btn btn-info">Store</button>
+          </div>
+
+          <div class="form-group">
+            <label id="contractAddress"></label>
           </div>
         </div>
       </form>
