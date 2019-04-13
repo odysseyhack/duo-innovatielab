@@ -1,20 +1,20 @@
-import {Injectable} from "@angular/core";
-import {Machtiging} from "../model/machtiging";
-import {Badge} from "../model/badge";
-import {VerificatieAanvraag} from "../model/verificatie-aanvraag";
+import {Injectable} from '@angular/core';
+import {Machtiging} from '../model/machtiging';
+import {Badge} from '../model/badge';
+import {Request} from '../model/request';
 
 declare let require: any;
 
 const badges = require('../../../assets/json/badges.json');
 const machtigingen = require('../../../assets/json/machtigingen.json');
-const verificatieAanvragen = require('../../../assets/json/verificatie-aanvragen.json');
+const verificatieAanvragen = require('../../../assets/json/requests.json');
 
 @Injectable({providedIn: 'root'})
 export class DatabaseService {
 
   badges: [Badge] = badges;
   machtigingen: [Machtiging] = machtigingen;
-  verificatieAanvragen: [VerificatieAanvraag] = verificatieAanvragen;
+  requests: [Request] = verificatieAanvragen;
 
   getData(soort) {
     return this[soort];
@@ -32,7 +32,23 @@ export class DatabaseService {
     this.machtigingen.push(machtiging);
   }
 
-  saveVerificatieAanvraag(verificatieAanvraag: VerificatieAanvraag) {
-    this.verificatieAanvragen.push(verificatieAanvraag);
+  saveRequest(verificatieAanvraag: Request) {
+    this.requests.push(verificatieAanvraag);
+  }
+
+  getRequests() {
+    return this.requests;
+  }
+
+  getRequest(id: number) {
+    const requests = this.getRequests();
+
+    for (const request of requests) {
+      if (request.id === id) {
+        return request;
+      }
+    }
+
+    return null;
   }
 }

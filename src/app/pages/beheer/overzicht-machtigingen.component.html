@@ -13,7 +13,8 @@
 
   <div class="card-deck">
     <div *ngFor="let machtiging of machtigingen">
-      <div [ngStyle]="machtiging.status !== 'invalid' ? {'opacity':'1'}: {'opacity':'0.5'}" class="card border-dark mb-3" style="max-width: 18rem;">
+      <div [ngStyle]="machtiging.status !== 'invalid' ? {'opacity':'1'}: {'opacity':'0.5'}"
+           class="card border-dark mb-3" style="max-width: 18rem;">
         <div *ngIf="machtiging.status === 'invalid'" class="card-header">INGETROKKEN: {{machtiging.titel}}</div>
         <div *ngIf="machtiging.status !== 'invalid'" class="card-header">{{machtiging.titel}}</div>
         <div class="card-body text-dark">

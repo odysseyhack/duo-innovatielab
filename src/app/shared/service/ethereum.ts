@@ -1,5 +1,5 @@
-import {Inject, Injectable} from "@angular/core";
-import {WEB3} from "./web3";
+import {Inject, Injectable} from '@angular/core';
+import {WEB3} from './web3';
 import Web3 from 'web3';
 
 declare let require: any;
@@ -31,17 +31,17 @@ export class Ethereum {
     let contractAddress;
 
     return new Promise(
-      function (resolve, reject) {
+      function(resolve, reject) {
         deployedBadge.deploy({data: that._code, arguments: [hash]})
-          .send({from: that._accounts[0]}, function (error, _result) {
+          .send({from: that._accounts[0]}, function(error, _result) {
             if (error) {
-              console.log("Rian van Rijbroek heeft de transactie onderschept.");
+              console.log('Rian van Rijbroek heeft de transactie onderschept.');
             } else {
-              let callback = function () {
-                that._web3.eth.getTransactionReceipt(_result.toString(), function (error, result) {
+              let callback = function() {
+                that._web3.eth.getTransactionReceipt(_result.toString(), function(error, result) {
                   if (result == null) {
                     setTimeout(callback, 1000);
-                    console.log("Nog 1 sec wachten..");
+                    console.log('Nog 1 sec wachten..');
                   } else {
                     console.log(result.contractAddress);
                     contractAddress = result.contractAddress;

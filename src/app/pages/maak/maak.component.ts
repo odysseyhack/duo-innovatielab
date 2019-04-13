@@ -1,8 +1,8 @@
 import {Component, Inject} from '@angular/core';
-import {Ethereum} from "../../shared/service/ethereum";
-import {Badge} from "../../shared/model/badge";
-import {Router} from "@angular/router";
-import {DatabaseService} from "../../shared/service/database.service";
+import {Ethereum} from '../../shared/service/ethereum';
+import {Badge} from '../../shared/model/badge';
+import {Router} from '@angular/router';
+import {DatabaseService} from '../../shared/service/database.service';
 
 @Component({
   templateUrl: './maak.component.html'
@@ -28,7 +28,7 @@ export class MaakComponent {
     let that = this;
     console.log(this.badgeData);
     const contractAddress = this._ethereum.storeOnBlockchain(this.makeId(32));
-    contractAddress.then(function (result) {
+    contractAddress.then(function(result) {
       that.badge.address = result;
       that.databaseService.saveBadge(that.badge);
     });

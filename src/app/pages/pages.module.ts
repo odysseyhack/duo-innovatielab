@@ -1,13 +1,15 @@
 import {NgModule} from '@angular/core';
-import {ControleerComponent} from "./controleer/controleer.component";
-import {BeheerComponent} from "./beheer/beheer.component";
-import {MaakComponent} from "./maak/maak.component";
-import {StartComponent} from "./start.component";
+import {ControleerComponent} from './controleer/controleer.component';
+import {BeheerComponent} from './beheer/beheer.component';
+import {MaakComponent} from './maak/maak.component';
+import {StartComponent} from './start.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
-import {ControleAanvraagAfhandelenComponent} from "./beheer/controle-aanvraag-afhandelen.component";
-import {OverzichtBadgesComponent} from "./beheer/overzicht-badges.component";
-import {OverzichtMachtigingenComponent} from "./beheer/overzicht-machtigingen.component";
+import {OverzichtBadgesComponent} from './beheer/overzicht-badges.component';
+import {OverzichtMachtigingenComponent} from './beheer/overzicht-machtigingen.component';
+import {RequestDetailComponent} from './beheer/request/detail/request-detail.component';
+import {RequestListComponent} from './beheer/request/list/request-list.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,14 +17,17 @@ import {OverzichtMachtigingenComponent} from "./beheer/overzicht-machtigingen.co
     MaakComponent,
     ControleerComponent,
     StartComponent,
-    ControleAanvraagAfhandelenComponent,
     OverzichtBadgesComponent,
-    OverzichtMachtigingenComponent
+    OverzichtMachtigingenComponent,
+
+    RequestDetailComponent,
+    RequestListComponent
   ],
   imports: [
     ReactiveFormsModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   providers: []
 })

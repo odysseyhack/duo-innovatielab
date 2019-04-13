@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Badge} from "../../shared/model/badge";
-import {DatabaseService} from "../../shared/service/database.service";
-import {Router} from "@angular/router";
+import {Badge} from '../../shared/model/badge';
+import {DatabaseService} from '../../shared/service/database.service';
+import {Router} from '@angular/router';
 
 @Component({
   templateUrl: './overzicht-badges.component.html'

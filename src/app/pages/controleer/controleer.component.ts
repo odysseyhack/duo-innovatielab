@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
-import {Router} from "@angular/router";
-import {VerificatieAanvraag} from "../../shared/model/verificatie-aanvraag";
-import {DatabaseService} from "../../shared/service/database.service";
+import {Router} from '@angular/router';
+import {Request} from '../../shared/model/request';
+import {DatabaseService} from '../../shared/service/database.service';
 
 
 @Component({
@@ -37,13 +37,13 @@ export class ControleerComponent {
   }
 
   create() {
-    let request = new VerificatieAanvraag();
+    let request = new Request();
     request.badgeType = this.badgeType;
     request.subType = this.subType;
     request.implications = this.implications;
     request.reason = this.reason;
 
-    this.databaseService.saveVerificatieAanvraag(request);
+    this.databaseService.saveRequest(request);
   }
 }
 

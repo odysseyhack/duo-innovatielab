@@ -1,0 +1,27 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a [routerLink]="['/']">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Requests</li>
+  </ol>
+</nav>
+
+<div style="text-align:center" class="container">
+  <h1>
+    Requests overview
+  </h1>
+
+  <div class="card-deck">
+    <div *ngFor="let request of requests">
+      <div [ngStyle]="request.status !== 'invalid' ? {'opacity':'1'}: {'opacity':'0.5'}" class="card border-dark mb-4"
+           style="max-width: 18rem;">
+        <div class="card-body text-dark">
+          <h5 class="card-title">{{request.badgeType}}</h5>
+          <p class="card-text">Type: {{request.subType}}<br>
+            Reden: {{request.reason}}</p>
+
+          <div class="float-left"><a [routerLink]="['/requests', request.id]" class="btn btn-info">View</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
