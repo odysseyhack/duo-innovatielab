@@ -6,7 +6,7 @@ import {Router} from "@angular/router";
   templateUrl: './controleer.component.html'
 })
 export class ControleerComponent {
-
+                      /*
   type = '';
   nationalityType='';
   diplomaType='';
@@ -42,7 +42,7 @@ export class ControleerComponent {
   navigeerNaar(event, pagina) {
     event.preventDefault();
     this.router.navigate([pagina]);
-  }
+  }            */
 }
 
 
