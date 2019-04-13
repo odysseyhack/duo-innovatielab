@@ -36,13 +36,14 @@ export class MaakComponent {
   store() {
     let that = this;
     console.log(this.badgeData);
-    const contractAddress = this._ethereum.storeOnBlockchain(this.makeId(32));
+    let hash = that.hashBadge(that.badgeData + that.badge.saltPrivate);
+    console.log("Badge hash = " + hash);
+
+    const contractAddress = this._ethereum.storeOnBlockchain(hash);
     contractAddress.then(function(result) {
       that.badge.address = result;
       that.databaseService.saveBadge(that.badge);
-
-      let hash = that.hashBadge(that.badgeData + that.badge.saltPrivate);
-      console.log("Badge hash = " + hash);
+                                                              
       sessionStorage.setItem(result, hash);
 
       document.getElementById("contractAddress").innerHTML = "Contract address on blockchain: " + result;

@@ -61,7 +61,6 @@ export class ControleerComponent {
 
     verificationResult.then((receipt) => {
       console.log(receipt);
-      console.log("Receipt" + receipt[0]);
     });
 
     this.databaseService.saveRequest(request);
@@ -75,6 +74,7 @@ export class ControleerComponent {
       let result = (h ^ h >>> 16) >>> 0;
       return result.toString();
     };
+
 
 }
 
