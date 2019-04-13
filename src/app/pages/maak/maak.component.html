@@ -19,7 +19,7 @@
       <form>
         <div class="form-group">
           <label for="typeInput">Type</label>
-          <select class="form-control" id="typeInput" name="badgeType" [(ngModel)]="badgeType">
+          <select class="form-control" id="typeInput" name="badgeType" [(ngModel)]="badge.type">
             <option value="0">Driver's license</option>
             <option disabled value="1">National identity (USA)</option>
             <option value="2">National identity (Dutch)</option>
@@ -27,18 +27,32 @@
         </div>
         <div class="form-group">
           <label for="firstnameInput">First name</label>
-          <input type="text" class="form-control" name="firstname" [(ngModel)]="firstname" id="firstnameInput" placeholder="John">
+          <input type="text" class="form-control" name="firstname" [(ngModel)]="badge.firstname" id="firstnameInput" placeholder="John">
         </div>
         <div class="form-group">
           <label for="lastnameInput">Last name</label>
-          <input type="text" class="form-control" [value]="firstname" id="lastnameInput" placeholder="Doe">
+          <input type="text" class="form-control" name="lastname" [(ngModel)]="badge.lastname" id="lastnameInput" placeholder="Doe">
         </div>
-        <div class="form-group" *ngIf="badgeType == 0">
+        <div class="form-group" *ngIf="badge.type == 0">
           <label for="licensetypeInput">License type</label>
           <select class="form-control" id="licensetypeInput">
             <option value="0">Bicycles</option>
             <option value="1">Cars</option>
           </select>
+        </div>
+
+        <div class="form-group">
+          <button (click)="create()" class="btn btn-info">Create</button>
+        </div>
+
+        <div class="form-group" *ngIf="badgeData != ''">
+          <label for="badgeTextInput">Badge data</label>
+          <textarea class="form-control" id="badgeTextInput" [value]="badgeData">
+          </textarea>
+        </div>
+
+        <div class="form-group" *ngIf="badgeData != ''">
+          <button (click)="store()" class="btn btn-info">That's okay, store</button>
         </div>
       </form>
     </div>
