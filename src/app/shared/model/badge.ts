@@ -1,4 +1,5 @@
 export class Badge {
+  id: number
   name: string;
   shortDescription: string;
   issuer: string;

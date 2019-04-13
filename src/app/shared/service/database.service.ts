@@ -12,6 +12,8 @@ const verificatieAanvragen = require('../../../assets/json/requests.json');
 @Injectable({providedIn: 'root'})
 export class DatabaseService {
 
+  badgeId: string;
+
   badges: [Badge] = badges;
   machtigingen: [Machtiging] = machtigingen;
   requests: [Request] = verificatieAanvragen;
@@ -22,6 +24,14 @@ export class DatabaseService {
 
   getDataListItem(soortLijst, id) {
     return this[soortLijst][id];
+  }
+
+  vindLijstItem(soort, id){
+    for (let i = 0; i < this[soort].length; i++){
+      if (this[soort][i].id === id) {
+        return this[soort][i];
+      }
+    }
   }
 
   saveBadge(badge: Badge) {
@@ -50,5 +60,13 @@ export class DatabaseService {
     }
 
     return null;
+  }
+
+  getOpgevraagdeBadgeNaam() {
+    return this.badgeId;
+  }
+
+  setOpgevraagdeBadgeNaam(id: string) {
+    this.badgeId = id;
   }
 }

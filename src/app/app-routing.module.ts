@@ -8,6 +8,7 @@ import {OverzichtBadgesComponent} from './pages/beheer/overzicht-badges.componen
 import {OverzichtMachtigingenComponent} from './pages/beheer/overzicht-machtigingen.component';
 import {RequestListComponent} from './pages/beheer/request/list/request-list.component';
 import {RequestDetailComponent} from './pages/beheer/request/detail/request-detail.component';
+import {BadgeDetailComponent} from './pages/beheer/badge-detail.component';
 
 const routes: Routes = [
   {path: 'maak', component: MaakComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'requests/:id', component: RequestDetailComponent},
   {path: 'overzicht-badges', component: OverzichtBadgesComponent},
   {path: 'overzicht-machtigingen', component: OverzichtMachtigingenComponent},
+  {path: 'badge-detail', component: BadgeDetailComponent},
   {path: '', component: StartComponent}
 ];
 

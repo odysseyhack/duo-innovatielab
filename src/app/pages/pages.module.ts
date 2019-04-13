@@ -9,6 +9,7 @@ import {OverzichtBadgesComponent} from './beheer/overzicht-badges.component';
 import {OverzichtMachtigingenComponent} from './beheer/overzicht-machtigingen.component';
 import {RequestDetailComponent} from './beheer/request/detail/request-detail.component';
 import {RequestListComponent} from './beheer/request/list/request-list.component';
+import {BadgeDetailComponent} from './beheer/badge-detail.component';
 import {RouterModule} from '@angular/router';
 
 @NgModule({
@@ -21,7 +22,8 @@ import {RouterModule} from '@angular/router';
     OverzichtMachtigingenComponent,
 
     RequestDetailComponent,
-    RequestListComponent
+    RequestListComponent,
+    BadgeDetailComponent
   ],
   imports: [
     ReactiveFormsModule,

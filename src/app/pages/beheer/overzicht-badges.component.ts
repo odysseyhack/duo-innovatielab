@@ -23,4 +23,9 @@ export class OverzichtBadgesComponent implements OnInit {
     this.router.navigate([pagina]);
   }
 
+  slaIdOp(id: string) {
+    this.databaseService.setOpgevraagdeBadgeNaam(id);
+    this.router.navigate(['badge-detail']);
+  }
+
 }
