@@ -1,7 +1,46 @@
+<!--
 <div style="text-align:center">
   <h1>
-    Maak badge
+
   </h1>
 
+  <button (click)="login($event)" type="button" class="btn btn-light">Login</button>
 
+  &lt;!&ndash;TODO invulvelden + button &ndash;&gt;
+
+</div>
+-->
+
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="align-self-center">
+      <h1>Create badge</h1>
+      <form>
+        <div class="form-group">
+          <label for="typeInput">Type</label>
+          <select class="form-control" id="typeInput" name="badgeType" [(ngModel)]="badgeType">
+            <option value="0">Driver's license</option>
+            <option disabled value="1">National identity (USA)</option>
+            <option value="2">National identity (Dutch)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="firstnameInput">First name</label>
+          <input type="text" class="form-control" name="firstname" [(ngModel)]="firstname" id="firstnameInput" placeholder="John">
+        </div>
+        <div class="form-group">
+          <label for="lastnameInput">Last name</label>
+          <input type="text" class="form-control" [value]="firstname" id="lastnameInput" placeholder="Doe">
+        </div>
+        <div class="form-group" *ngIf="badgeType == 0">
+          <label for="licensetypeInput">License type</label>
+          <select class="form-control" id="licensetypeInput">
+            <option value="0">Bicycles</option>
+            <option value="1">Cars</option>
+          </select>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
