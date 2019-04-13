@@ -3,6 +3,8 @@ import {ControleerComponent} from "./controleer/controleer.component";
 import {BeheerComponent} from "./beheer/beheer.component";
 import {MaakComponent} from "./maak/maak.component";
 import {StartComponent} from "./start.component";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
 import {ControleAanvraagAfhandelenComponent} from "./beheer/controle-aanvraag-afhandelen.component";
 import {OverzichtBadgesComponent} from "./beheer/overzicht-badges.component";
 import {OverzichtMachtigingenComponent} from "./beheer/overzicht-machtigingen.component";
@@ -19,7 +21,11 @@ import {MachtigingAanvraagAfhandelenComponent} from "./beheer/machtiging-aanvraa
     OverzichtBadgesComponent,
     OverzichtMachtigingenComponent
   ],
-  imports: [],
+  imports: [
+    ReactiveFormsModule,
+    FormsModule,
+    CommonModule
+  ],
   providers: []
 })
 export class PagesModule {
