@@ -1,11 +1,18 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#" (click)="navigeerNaar($event, '')">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Beheer</li>
+  </ol>
+</nav>
+
 <div style="text-align:center">
   <h1>
     Beheer badges en machtigingen
   </h1>
 
-  <button (click)="gaNaarPagina($event, 1)">Overzicht badges</button>
-  <button (click)="gaNaarPagina($event, 2)">Overzicht machtigingen</button>
-  <button (click)="gaNaarPagina($event, 3)">Controle aanvraag afhandelen</button>
-  <button (click)="gaNaarPagina($event, 4)">Machtiging aanvraag afhandelen</button>
+  <button (click)="navigeerNaar($event, 'overzicht-badges')">Overzicht badges</button>
+  <button (click)="navigeerNaar($event, 'overzicht-machtigingen')">Overzicht machtigingen</button>
+  <button (click)="navigeerNaar($event, 'controle-aanvraag-afhandelen')">Controle aanvraag afhandelen</button>
+  <button (click)="navigeerNaar($event, 'machtiging-aanvraag-afhandelen')">Machtiging aanvraag afhandelen</button>
 
 </div>

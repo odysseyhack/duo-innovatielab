@@ -1,3 +1,11 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#" (click)="navigeerNaar($event, '')">Home</a></li>
+    <li class="breadcrumb-item"><a href="#" (click)="navigeerNaar($event, 'beheer')">Beheer</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Overzicht badges</li>
+  </ol>
+</nav>
+
 <div style="text-align:center" class="container">
   <h1>
     Overzicht badges
@@ -6,7 +14,8 @@
   <div class="card-deck">
     <div *ngFor="let badge of badges">
       <div [ngStyle]="badge.valid ? {'opacity':'1'}: {'opacity':'0.5'}" class="card border-dark mb-3" style="max-width: 18rem;">
-        <div class="card-header">{{badge.name}}<span *ngIf="!badge.valid"> INGETROKKEN</span></div>
+        <div *ngIf="!badge.valid" class="card-header">INGETROKKEN: {{badge.name}}</div>
+        <div *ngIf="badge.valid" class="card-header">{{badge.name}}</div>
         <div class="card-body text-dark">
           <h5 class="card-title">{{badge.recipient}}</h5>
           <p class="card-text">{{badge.shortDescription}}</p>

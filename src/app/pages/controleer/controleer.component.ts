@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   templateUrl: './controleer.component.html'
@@ -6,4 +7,10 @@ import { Component } from '@angular/core';
 export class ControleerComponent {
 
 
+  constructor (private router: Router) {}
+
+  navigeerNaar(event, pagina) {
+    event.preventDefault();
+    this.router.navigate([pagina]);
+  }
 }
