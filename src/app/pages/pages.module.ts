@@ -8,6 +8,7 @@ import {CommonModule} from '@angular/common';
 import {ControleAanvraagAfhandelenComponent} from "./beheer/controle-aanvraag-afhandelen.component";
 import {OverzichtBadgesComponent} from "./beheer/overzicht-badges.component";
 import {OverzichtMachtigingenComponent} from "./beheer/overzicht-machtigingen.component";
+import {BadgeDetailComponent} from "./beheer/badge-detail.component";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {OverzichtMachtigingenComponent} from "./beheer/overzicht-machtigingen.co
     StartComponent,
     ControleAanvraagAfhandelenComponent,
     OverzichtBadgesComponent,
-    OverzichtMachtigingenComponent
+    OverzichtMachtigingenComponent,
+    BadgeDetailComponent
   ],
   imports: [
     ReactiveFormsModule,

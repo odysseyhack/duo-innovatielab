@@ -7,6 +7,7 @@ import {StartComponent} from "./pages/start.component";
 import {ControleAanvraagAfhandelenComponent} from "./pages/beheer/controle-aanvraag-afhandelen.component";
 import {OverzichtBadgesComponent} from "./pages/beheer/overzicht-badges.component";
 import {OverzichtMachtigingenComponent} from "./pages/beheer/overzicht-machtigingen.component";
+import {BadgeDetailComponent} from "./pages/beheer/badge-detail.component";
 
 const routes: Routes = [
   {path: 'maak', component: MaakComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'controle-aanvraag-afhandelen', component: ControleAanvraagAfhandelenComponent},
   {path: 'overzicht-badges', component: OverzichtBadgesComponent},
   {path: 'overzicht-machtigingen', component: OverzichtMachtigingenComponent},
+  {path: 'badge-detail', component: BadgeDetailComponent},
   {path: '', component: StartComponent}
 ];
 

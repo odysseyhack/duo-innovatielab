@@ -4,28 +4,23 @@ import {DatabaseService} from "../../shared/service/database.service";
 import {Router} from "@angular/router";
 
 @Component({
-  templateUrl: './overzicht-badges.component.html'
+  templateUrl: './badge-detail.component.html'
 })
-export class OverzichtBadgesComponent implements OnInit {
+export class BadgeDetailComponent implements OnInit {
 
-  badges: [Badge];
+  badge: Badge;
 
   constructor(private databaseService: DatabaseService,
               private router: Router) {
   }
 
   ngOnInit(): void {
-    this.badges = this.databaseService.getData('badges');
+    this.badge = this.databaseService.vindLijstItem('badges', this.databaseService.getOpgevraagdeBadgeNaam());
   }
 
   navigeerNaar(event: Event, pagina: string) {
     event.preventDefault();
     this.router.navigate([pagina]);
-  }
-
-  slaIdOp(id: string) {
-    this.databaseService.setOpgevraagdeBadgeNaam(id);
-    this.router.navigate(['badge-detail']);
   }
 
 }
