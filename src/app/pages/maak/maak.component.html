@@ -24,41 +24,49 @@
       <h1>Create badge</h1>
       <form>
         <div class="form-group">
-          <label for="typeInput">Type</label>
-          <select class="form-control" id="typeInput" name="badgeType" [(ngModel)]="badge.type">
-            <option value="0">Driver's license</option>
-            <option disabled value="1">National identity (USA)</option>
-            <option value="2">National identity (Dutch)</option>
-          </select>
+          <label for="nameInput">Name</label>
+          <input type="text" class="form-control" name="name" [(ngModel)]="badge.name" id="nameInput"
+                 placeholder="Badge for Dutch citizenship">
+        </div>
+        <div class="form-group" *ngIf="badgeData != ''">
+          <label for="shortDescriptionInput">Short description</label>
+          <textarea class="form-control" id="shortDescriptionInput" name="description" [value]="badge.shortDescription">
+          </textarea>
         </div>
         <div class="form-group">
-          <label for="firstnameInput">First name</label>
-          <input type="text" class="form-control" name="firstname" [(ngModel)]="badge.firstname" id="firstnameInput" placeholder="John">
+          <label for="issuerInput">Issuer</label>
+          <input type="text" class="form-control" name="issuer" [(ngModel)]="badge.issuer" id="issuerInput"
+                 placeholder="Dutch citizenship issuer">
         </div>
         <div class="form-group">
-          <label for="lastnameInput">Last name</label>
-          <input type="text" class="form-control" name="lastname" [(ngModel)]="badge.lastname" id="lastnameInput" placeholder="Doe">
+          <label for="recipientInput">Recipient</label>
+          <input type="text" class="form-control" name="recipient" [(ngModel)]="badge.recipient" id="recipientInput"
+                 placeholder="A citizen">
         </div>
-        <div class="form-group" *ngIf="badge.type == 0">
-          <label for="licensetypeInput">License type</label>
-          <select class="form-control" id="licensetypeInput">
-            <option value="0">Bicycles</option>
-            <option value="1">Cars</option>
-          </select>
+        <div class="form-group">
+          <label for="issueDateInput">Issue date</label>
+          <input type="date" class="form-control" name="issueDate" [(ngModel)]="badge.issueDate" id="issueDateInput"
+                 placeholder="A citizen">
         </div>
 
         <div class="form-group">
           <button (click)="create()" class="btn btn-info">Create</button>
         </div>
 
-        <div class="form-group" *ngIf="badgeData != ''">
-          <label for="badgeTextInput">Badge data</label>
-          <textarea class="form-control" id="badgeTextInput" [value]="badgeData">
-          </textarea>
-        </div>
+        <div *ngIf="badgeData != ''">
+          <div class="form-group">
+            <label for="badgeTextInput">Badge data</label>
+            <textarea class="form-control" id="badgeTextInput" [value]="badgeData"></textarea>
+          </div>
 
-        <div class="form-group" *ngIf="badgeData != ''">
-          <button (click)="store()" class="btn btn-info">That's okay, store</button>
+          <div class="form-group">
+            <label for="secretInput">Secret</label>
+            <input class="form-control" id="secretInput" name="secret" [value]="salt">
+          </div>
+
+          <div class="form-group">
+            <button (click)="store()" class="btn btn-info">Store</button>
+          </div>
         </div>
       </form>
     </div>

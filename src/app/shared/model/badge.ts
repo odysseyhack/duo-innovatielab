@@ -8,3 +8,4 @@ export class Badge {
   saltPublic: string;
   valid: boolean;
 }
+
