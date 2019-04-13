@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Ethereum} from "../../shared/service/ethereum";
 
 @Component({
   templateUrl: './maak.component.html'
@@ -18,5 +19,7 @@ export class MaakComponent {
 
   store() {
     console.log(this.badgeData);
+    let eth = new Ethereum();
+    eth.storeOnBlockchain();
   }
 }
