@@ -2,6 +2,7 @@ import {Component, Inject} from '@angular/core';
 import {Ethereum} from "../../shared/service/ethereum";
 import {Badge} from "../../shared/model/badge";
 import {Router} from "@angular/router";
+import {DatabaseService} from "../../shared/service/database.service";
 
 @Component({
   templateUrl: './maak.component.html'
@@ -14,6 +15,7 @@ export class MaakComponent {
   private _ethereum: any;
 
   constructor(private router: Router,
+              private databaseService: DatabaseService,
               @Inject(Ethereum) private ethereum: Ethereum) {
     this.salt = this.makeId(10);
     this._ethereum = ethereum;
@@ -23,7 +25,9 @@ export class MaakComponent {
   }
 
   store() {
+    this.badge.valid = true;
     console.log(this.badgeData);
+    this.databaseService.saveBadge(this.badge);
     this._ethereum.storeOnBlockchain();
   }
 

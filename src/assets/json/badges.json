@@ -20,7 +20,7 @@
     "valid": true
   },
   {
-    "name": "Nederlanderschap",
+    "name": "Nationality",
     "shortDescription": "Dit is de badge die aangeeft dat je Nederlander bent",
     "issuer": "GBA",
     "recipient": "Henk de Haver",
@@ -30,7 +30,7 @@
     "valid": true
   },
   {
-    "name": "Rijbewijs B",
+    "name": "Driver license B",
     "shortDescription": "Dit is de badge die aangeeft dat je de trotse bezitterbent van een rijbewijs B",
     "issuer": "CBR",
     "recipient": "Henk de Haver",
