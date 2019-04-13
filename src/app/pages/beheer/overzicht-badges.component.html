@@ -13,9 +13,9 @@
 
   <div class="card-deck">
     <div *ngFor="let badge of badges">
-      <div [ngStyle]="badge.valid ? {'opacity':'1'}: {'opacity':'0.5'}" class="card border-dark mb-3" style="max-width: 18rem;">
-        <div *ngIf="!badge.valid" class="card-header">INGETROKKEN: {{badge.name}}</div>
-        <div *ngIf="badge.valid" class="card-header">{{badge.name}}</div>
+      <div [ngStyle]="badge.status !== 'invalid' ? {'opacity':'1'}: {'opacity':'0.5'}" class="card border-dark mb-3" style="max-width: 18rem;">
+        <div *ngIf="badge.status === 'invalid'" class="card-header">INGETROKKEN: {{badge.name}}</div>
+        <div *ngIf="badge.status !== 'invalid'" class="card-header">{{badge.name}}</div>
         <div class="card-body text-dark">
           <h5 class="card-title">{{badge.recipient}}</h5>
           <p class="card-text">{{badge.shortDescription}}</p>

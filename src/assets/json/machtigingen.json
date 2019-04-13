@@ -1,0 +1,38 @@
+[
+  {
+    "titel": "Nationality",
+    "instelling": "GBA",
+    "reden": "Emigratie",
+    "periode": {
+      "van": "01-01-2019",
+      "tot": "01-02-2019"
+    },
+    "gemachtigde": "Klaas",
+    "valid": "true",
+    "status": "submitted"
+  },
+  {
+    "titel": "Rijbewijs B",
+    "instelling": "GBA",
+    "reden": "Betalen boete",
+    "periode": {
+      "van": "02-01-2019",
+      "tot": "06-01-2019"
+    },
+    "gemachtigde": "Piet",
+    "valid": "false",
+    "status": "processed"
+  },
+  {
+    "titel": "Rijbewijs B",
+    "instelling": "GBA",
+    "reden": "Betalen boete",
+    "periode": {
+      "van": "02-01-2018",
+      "tot": "06-01-2018"
+    },
+    "gemachtigde": "Piet",
+    "valid": "false",
+    "status": "invalid"
+  }
+]

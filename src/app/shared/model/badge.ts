@@ -6,6 +6,6 @@ export class Badge {
   issueDate: string;
   saltPrivate: string;
   saltPublic: string;
-  valid: boolean;
+  status: string;
 }
 

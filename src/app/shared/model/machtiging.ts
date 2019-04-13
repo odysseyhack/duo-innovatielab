@@ -5,6 +5,8 @@ export class Machtiging {
   periode: Periode;
   valid: boolean;
   gemachtigde: string;
+  implications: [string];
+  status: string;
 }
 
 export class Periode {

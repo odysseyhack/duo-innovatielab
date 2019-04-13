@@ -7,7 +7,7 @@
     "issueDate": "13-04-2019",
     "saltPrivate": "uniekeSaltPrivate1",
     "saltPublic": "uniekeSaltPublic1",
-    "valid": true
+    "status": "submitted"
   },
   {
     "name": "Diploma OCP",
@@ -17,7 +17,7 @@
     "issueDate": "13-04-2019",
     "saltPrivate": "uniekeSaltPrivate2",
     "saltPublic": "uniekeSaltPublic2",
-    "valid": true
+    "status": "processed"
   },
   {
     "name": "Nationality",
@@ -27,7 +27,7 @@
     "issueDate": "01-04-2000",
     "saltPrivate": "uniekeSaltPrivate3",
     "saltPublic": "uniekeSaltPublic3",
-    "valid": true
+    "status": "processed"
   },
   {
     "name": "Driver license B",
@@ -37,7 +37,7 @@
     "issueDate": "13-03-2018",
     "saltPrivate": "uniekeSaltPrivate4",
     "saltPublic": "uniekeSaltPublic4",
-    "valid": false
+    "status": "invalid"
   }
 
 ]
