@@ -4,4 +4,8 @@ export class Badge {
   issuer: string;
   recipient: string;
   issueDate: string;
+  saltPrivate: string;
+  saltPublic: string;
+  valid: boolean;
 }
+

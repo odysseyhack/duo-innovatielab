@@ -5,13 +5,21 @@ import {MaakComponent} from "./maak/maak.component";
 import {StartComponent} from "./start.component";
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
+import {ControleAanvraagAfhandelenComponent} from "./beheer/controle-aanvraag-afhandelen.component";
+import {OverzichtBadgesComponent} from "./beheer/overzicht-badges.component";
+import {OverzichtMachtigingenComponent} from "./beheer/overzicht-machtigingen.component";
+import {MachtigingAanvraagAfhandelenComponent} from "./beheer/machtiging-aanvraag-afhandelen.component";
 
 @NgModule({
   declarations: [
     BeheerComponent,
     MaakComponent,
     ControleerComponent,
-    StartComponent
+    StartComponent,
+    MachtigingAanvraagAfhandelenComponent,
+    ControleAanvraagAfhandelenComponent,
+    OverzichtBadgesComponent,
+    OverzichtMachtigingenComponent
   ],
   imports: [
     ReactiveFormsModule,

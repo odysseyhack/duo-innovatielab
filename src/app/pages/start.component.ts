@@ -9,13 +9,13 @@ export class StartComponent {
 
   constructor (private router: Router) {}
 
-  login(event, typeGebruiker) {
+  gaNaarPagina(event, vervolgPagina) {
     // event.preventDefault();
-    if (typeGebruiker === 1) {
+    if (vervolgPagina === 1) {
       this.router.navigate(['maak']);
-    } else if (typeGebruiker === 2) {
+    } else if (vervolgPagina === 2) {
       this.router.navigate(['beheer']);
-    } else if (typeGebruiker === 3) {
+    } else if (vervolgPagina === 3) {
       this.router.navigate(['controleer']);
     }
   }

@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, Inject} from '@angular/core';
+import {Ethereum} from "../../shared/service/ethereum";
 import {Badge} from '../../shared/model/badge';
 
 @Component({
@@ -9,12 +10,19 @@ export class MaakComponent {
 
   badgeData = '';
 
+  private _ethereum: any;
+
+  constructor(@Inject(Ethereum) private ethereum: Ethereum) {
+    this._ethereum = ethereum;
+  }
+
   create() {
     this.badgeData = JSON.stringify(this.badge);
   }
 
   store() {
     console.log(this.badgeData);
+    this._ethereum.storeOnBlockchain();
   }
 
   makeId(length) {
