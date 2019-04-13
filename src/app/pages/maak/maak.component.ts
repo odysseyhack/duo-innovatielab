@@ -27,7 +27,11 @@ export class MaakComponent {
   store() {
     console.log(this.badgeData);
     this.databaseService.saveBadge(this.badge);
-    this._ethereum.storeOnBlockchain(this.makeId(32));
+    const contractAddress = this._ethereum.storeOnBlockchain(this.makeId(32));
+    contractAddress.then(function(result) {
+      alert(result);
+    });
+
   }
 
   makeId(length) {

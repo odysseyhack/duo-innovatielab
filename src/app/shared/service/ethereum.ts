@@ -28,29 +28,31 @@ export class Ethereum {
     const deployedBadge = new this._web3.eth.Contract(abi);
 
     let that = this;
+    let contractAddress;
 
-    deployedBadge.deploy({data: this._code, arguments: [hash]})
-      .send({from: this._accounts[0]}, function (error, _result) {
-        if (error) {
-          console.log("Rian van Rijbroek heeft de transactie onderschept.");
-        } else {
-          let callback = function () {
-            that._web3.eth.getTransactionReceipt(_result.toString(), function (error, result) {
-              if (result == null) {
-                setTimeout(callback, 1000);
-                console.log("Nog 1 sec wachten..");
-              } else {
-                console.log(result.contractAddress);
-              }
-            });
-          };
-          callback();
+    return new Promise(
+      function (resolve, reject) {
+        deployedBadge.deploy({data: that._code, arguments: [hash]})
+          .send({from: that._accounts[0]}, function (error, _result) {
+            if (error) {
+              console.log("Rian van Rijbroek heeft de transactie onderschept.");
+            } else {
+              let callback = function () {
+                that._web3.eth.getTransactionReceipt(_result.toString(), function (error, result) {
+                  if (result == null) {
+                    setTimeout(callback, 1000);
+                    console.log("Nog 1 sec wachten..");
+                  } else {
+                    console.log(result.contractAddress);
+                    contractAddress = result.contractAddress;
+                    resolve(contractAddress);
+                  }
+                });
+              };
+              callback();
+            }
+          });
 
-        }
       });
-
-
-  };
-
-
+  }
 }
