@@ -2,23 +2,105 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="#" (click)="navigeerNaar($event, '')">Home</a></li>
     <li class="breadcrumb-item"><a href="#" (click)="navigeerNaar($event, 'beheer')">Manage</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Badges overview</li>
+    <li class="breadcrumb-item"><a href="#" (click)="navigeerNaar($event, 'overzicht-badges')">Badges overview</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Badge details</li>
   </ol>
 </nav>
 
 <div style="text-align:center" class="container">
   <h1>
-    Badge details {{badge}}
+    Badge details
   </h1>
 
+  <!--  <table>-->
+  <!--    <thead>-->
+  <!--    <tr>-->
+  <!--      <th scope="col">#</th>-->
+  <!--      <th scope="col">Name</th>-->
+  <!--      <th scope="col">Description</th>-->
+  <!--      <th scope="col">Issuer</th>-->
+  <!--      <th scope="col">Recipient</th>-->
+  <!--      <th scope="col">Status</th>-->
+  <!--      <th scope="col">Address</th>-->
+  <!--    </tr>-->
+  <!--    </thead>-->
+  <!--    <tbody>-->
+  <!--    <tr>-->
+  <!--      <td>{{badge.name}}</td>-->
+  <!--      <td>{{badge.shortDescription}}</td>-->
+  <!--      <td>{{badge.issuer}}</td>-->
+  <!--      <td>{{badge.recipient}}</td>-->
+  <!--      <td>{{badge.status}}</td>-->
+  <!--      <td>{{badge.address}}</td>-->
+  <!--    </tr>-->
+  <!--    </tbody>-->
+  <!--  </table>-->
 
-<!--  <div [ngStyle]="badge.status !== 'invalid' ? {'opacity':'1'}: {'opacity':'0.5'}" class="card border-dark mb-3"-->
-<!--       style="max-width: 18rem;">-->
-<!--    <div *ngIf="badge.status === 'invalid'" class="card-header">INGETROKKEN: {{badge.name}}</div>-->
-<!--    <div *ngIf="badge.status !== 'invalid'" class="card-header">{{badge.name}}</div>-->
-<!--    <div class="card-body text-dark">-->
-<!--      <h5 class="card-title">{{badge.recipient}}</h5>-->
-<!--      <p class="card-text">{{badge.shortDescription}}</p>-->
-<!--    </div>-->
-<!--  </div>-->
+  <div class="float-left" style="font-weight: bold">Name:</div>
+  {{badge.name}}
+  <br>
+  <div class="float-left" style="font-weight: bold">Description:</div>
+  {{badge.shortDescription}}
+  <br>
+  <div class="float-left" style="font-weight: bold">Issuer:</div>
+  {{badge.issuer}}
+  <br>
+  <div class="float-left" style="font-weight: bold">Recipient:</div>
+  {{badge.recipient}}
+  <br>
+  <div class="float-left" style="font-weight: bold">Status:</div>
+  {{badge.status}}
+  <br>
+  <div class="float-left" style="font-weight: bold">Address:</div>
+  {{badge.address}}
+  <br>
+  <br>
+  <br>
+
+  <div class="float-left" style="font-weight: bold">Badge verification requests:</div>
+  <br>
+  <div class="card-deck">
+    <div *ngFor="let request of requests">
+      <div [ngStyle]="request.status !== 'invalid' ? {'opacity':'1'}: {'opacity':'0.5'}" class="card border-dark mb-3"
+           style="max-width: 18rem;">
+        <div *ngIf="request.status === 'invalid'" class="card-header">INGETROKKEN: {{request.badgeType}}</div>
+        <div *ngIf="request.status !== 'invalid'" class="card-header">{{request.badgeType}}</div>
+        <div class="card-body text-dark">
+          <h5 class="card-title">{{request.badgeType}}</h5>
+          <p class="card-text">{{request.subType}}</p>
+          <p class="card-text">{{request.reason}}</p>
+          <p class="card-text">{{request.implications}}</p>
+          <p class="card-text">{{request.status}}</p>
+        </div>
+        <div *ngIf="request.status === 'submitted'">
+          <div class="float-left"><a (click)="refuseRequest(request)" class="btn btn-info">Refuse</a></div>
+          <div class="float-left"><a (click)="acceptRequest(request)" class="btn btn-info">Accept</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="float-left" style="font-weight: bold">Authorization requests:</div>
+  <br>
+  <div class="card-deck">
+    <div *ngFor="let authorization of authorizations">
+      <div [ngStyle]="authorization.status !== 'invalid' ? {'opacity':'1'}: {'opacity':'0.5'}" class="card border-dark mb-3"
+           style="max-width: 18rem;">
+        <div *ngIf="authorization.status === 'invalid'" class="card-header">INGETROKKEN: {{authorization.titel}}</div>
+        <div *ngIf="authorization.status !== 'invalid'" class="card-header">{{authorization.titel}}</div>
+        <div class="card-body text-dark">
+          <h5 class="card-title">{{authorization.titel}}</h5>
+          <p class="card-text">{{authorization.periode.van}}-{{authorization.periode.tot}}</p>
+          <p class="card-text">{{authorization.reason}}</p>
+          <p class="card-text">{{authorization.implications}}</p>
+          <p class="card-text">{{authorization.status}}</p>
+        </div>
+        <div *ngIf="authorization.status === 'submitted'">
+          <div class="float-left"><a (click)="refuseAuth(authorization)" class="btn btn-info">Refuse</a></div>
+          <div class="float-left"><a (click)="acceptAuth(authorization)" class="btn btn-info">Accept</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--TODO history authorizations + goed/afkeuren-->
 </div>

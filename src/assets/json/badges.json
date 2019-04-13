@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "name": "Diploma OCA",
     "shortDescription": "Dit is de badge die aangeeft dat je OCA gehaald hebt",
     "issuer": "Oracle",
@@ -11,7 +11,7 @@
     "status": "submitted"
   },
   {
-    "id": "2",
+    "id": 2,
     "name": "Diploma OCP",
     "shortDescription": "Dit is de badge die aangeeft dat je OCP gehaald hebt",
     "issuer": "Oracle",
@@ -19,10 +19,10 @@
     "issueDate": "13-04-2019",
     "saltPrivate": "uniekeSaltPrivate2",
     "saltPublic": "uniekeSaltPublic2",
-    "status": "processed"
+    "status": "accepted"
   },
   {
-    "id": "3",
+    "id": 3,
     "name": "Nationality",
     "shortDescription": "Dit is de badge die aangeeft dat je Nederlander bent",
     "issuer": "GBA",
@@ -30,10 +30,10 @@
     "issueDate": "01-04-2000",
     "saltPrivate": "uniekeSaltPrivate3",
     "saltPublic": "uniekeSaltPublic3",
-    "status": "processed"
+    "status": "refused"
   },
   {
-    "id": "4",
+    "id": 4,
     "name": "Driver license B",
     "shortDescription": "Dit is de badge die aangeeft dat je de trotse bezitterbent van een rijbewijs B",
     "issuer": "CBR",

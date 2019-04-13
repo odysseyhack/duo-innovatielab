@@ -1,5 +1,7 @@
 [
   {
+    "id": 1,
+    "badgeId": 1,
     "titel": "Nationality",
     "instelling": "GBA",
     "reden": "Emigratie",
@@ -12,6 +14,8 @@
     "status": "submitted"
   },
   {
+    "id": 2,
+    "badgeId": 1,
     "titel": "Rijbewijs B",
     "instelling": "GBA",
     "reden": "Betalen boete",
@@ -21,9 +25,11 @@
     },
     "gemachtigde": "Piet",
     "valid": "false",
-    "status": "processed"
+    "status": "submitted"
   },
   {
+    "id": 3,
+    "badgeId": 2,
     "titel": "Rijbewijs B",
     "instelling": "GBA",
     "reden": "Betalen boete",

@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'requests', component: RequestListComponent},
   {path: 'requests/:id', component: RequestDetailComponent},
   {path: 'overzicht-badges', component: OverzichtBadgesComponent},
-  {path: 'overzicht-machtigingen', component: OverzichtMachtigingenComponent},
+  {path: 'overzicht-authorizations', component: OverzichtMachtigingenComponent},
   {path: 'badge-detail', component: BadgeDetailComponent},
   {path: '', component: StartComponent}
 ];

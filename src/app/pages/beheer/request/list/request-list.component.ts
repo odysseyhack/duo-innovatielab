@@ -7,7 +7,7 @@ import {Request} from '../../../../shared/model/request';
   templateUrl: './request-list.component.html'
 })
 export class RequestListComponent implements OnInit {
-  private requests: [Request];
+  private requests: Request[];
 
   constructor(private router: Router, private databaseService: DatabaseService) {
   }

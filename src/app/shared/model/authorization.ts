@@ -1,15 +1,17 @@
-export class Machtiging {
+export class Authorization {
+  id: number;
+  badgeId: number;
   titel: string;
   instelling: string;
-  reden: string;
-  periode: Periode;
+  reason: string;
+  periode: Period;
   valid: boolean;
   gemachtigde: string;
   implications: [string];
   status: string;
 }
 
-export class Periode {
+export class Period {
   van: string;
   tot: string;
 }

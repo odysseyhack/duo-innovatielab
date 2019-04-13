@@ -1,22 +1,22 @@
 import {Injectable} from '@angular/core';
-import {Machtiging} from '../model/machtiging';
 import {Badge} from '../model/badge';
 import {Request} from '../model/request';
+import {Authorization} from "../model/authorization";
 
 declare let require: any;
 
 const badges = require('../../../assets/json/badges.json');
-const machtigingen = require('../../../assets/json/machtigingen.json');
-const verificatieAanvragen = require('../../../assets/json/requests.json');
+const authorizations = require('../../../assets/json/authorizations.json');
+const requests = require('../../../assets/json/requests.json');
 
 @Injectable({providedIn: 'root'})
 export class DatabaseService {
 
-  badgeId: string;
+  badgeId: number;
 
-  badges: [Badge] = badges;
-  machtigingen: [Machtiging] = machtigingen;
-  requests: [Request] = verificatieAanvragen;
+  badges: Badge[] = badges;
+  authorizations: Authorization[] = authorizations;
+  requests: Request[] = requests;
 
   getData(soort) {
     return this[soort];
@@ -24,6 +24,26 @@ export class DatabaseService {
 
   getDataListItem(soortLijst, id) {
     return this[soortLijst][id];
+  }
+
+  getRequestsForBadge(id: number): any[]{
+    let results = [];
+    for (let i = 0; i < this.requests.length; i++){
+      if (this.requests[i].badgeId === id) {
+        results.push(this.requests[i]);
+      }
+    }
+    return results;
+  }
+
+  getAuthorizationsForBadge(id: number): any[]{
+    let results = [];
+    for (let i = 0; i < this.authorizations.length; i++){
+      if (this.authorizations[i].badgeId === id) {
+        results.push(this.authorizations[i]);
+      }
+    }
+    return results;
   }
 
   vindLijstItem(soort, id){
@@ -38,12 +58,20 @@ export class DatabaseService {
     this.badges.push(badge);
   }
 
-  saveMachtiging(machtiging: Machtiging) {
-    this.machtigingen.push(machtiging);
+  saveMachtiging(authorization: Authorization) {
+    this.authorizations.push(authorization);
+  }
+
+  saveAuthorizations(authorizations: Authorization[]) {
+    this.authorizations = authorizations;
   }
 
   saveRequest(verificatieAanvraag: Request) {
     this.requests.push(verificatieAanvraag);
+  }
+
+  saveRequests(requests: Request[]) {
+    this.requests = requests;
   }
 
   getRequests() {
@@ -58,15 +86,14 @@ export class DatabaseService {
         return request;
       }
     }
-
     return null;
   }
 
-  getOpgevraagdeBadgeNaam() {
+  getOpgevraagdeBadgeId() {
     return this.badgeId;
   }
 
-  setOpgevraagdeBadgeNaam(id: string) {
+  setOpgevraagdeBadgeId(id: number) {
     this.badgeId = id;
   }
 }
