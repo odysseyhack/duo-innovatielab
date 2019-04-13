@@ -4,6 +4,19 @@ import {Component} from '@angular/core';
   templateUrl: './maak.component.html'
 })
 export class MaakComponent {
-  badgeType = 0;
-  firstname = 'John';
+  badge = {
+    type: 0,
+    firstname: 'John',
+    lastname: 'Doe'
+  };
+
+  badgeData = '';
+
+  create() {
+    this.badgeData = JSON.stringify(this.badge);
+  }
+
+  store() {
+    console.log(this.badgeData);
+  }
 }
