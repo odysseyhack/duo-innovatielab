@@ -1,0 +1,31 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#" (click)="navigeerNaar($event, '')">Home</a></li>
+    <li class="breadcrumb-item"><a href="#" (click)="navigeerNaar($event, 'beheer')">Manage</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Badges overview</li>
+  </ol>
+</nav>
+
+<div style="text-align:center" class="container">
+  <div id="divClient" class="bg-success">
+    <h2><i class="far fa-user fa-1x"></i>
+
+    Badges overview
+    </h2></div>
+
+  <div class="card-deck">
+    <div *ngFor="let badge of badges">
+      <div [ngStyle]="badge.status !== 'invalid' ? {'opacity':'1'}: {'opacity':'0.5'}" class="card border-dark mb-3"
+           style="max-width: 18rem;">
+        <div *ngIf="badge.status === 'invalid'" class="card-header">INGETROKKEN: {{badge.name}}</div>
+        <div *ngIf="badge.status !== 'invalid'" class="card-header">{{badge.name}}</div>
+        <div class="card-body text-dark">
+          <h5 class="card-title">{{badge.recipient}}</h5>
+          <p class="card-text">{{badge.shortDescription}}</p>
+          <p class="card-text">{{badge.address}}</p>
+        </div>
+        <div class="float-left"><a (click)="slaIdOp(badge.id)" class="btn btn-success">View</a></div>
+      </div>
+    </div>
+  </div>
+</div>

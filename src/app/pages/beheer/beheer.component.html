@@ -1,0 +1,23 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#" (click)="navigeerNaar($event, '')">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Manage</li>
+  </ol>
+</nav>
+
+<div class="container">
+
+    <div class="align-self-center">
+      <div id="divClient" class="bg-success">
+        <h2><i class="far fa-user fa-1x"></i> USER PAGE</h2>
+  <h1>
+    Manage badges and authorizations
+  </h1></div>
+      <hr/>
+
+  <p><button class="btn btn-success" routerLink="/overzicht-badges">Badges overview</button>&nbsp; <em>End-user views badges</em></p>
+  <p><button class="btn btn-success" routerLink="/overzicht-authorizations">Authorizations overview</button>&nbsp; <em>End-user views granted authorizations</em></p>
+  <p><button class="btn btn-success" routerLink="/requests">Requests overview</button>&nbsp; <em>End-user views incoming requests</em></p>
+
+</div>
+</div>

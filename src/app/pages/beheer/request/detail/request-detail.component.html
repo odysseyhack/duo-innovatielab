@@ -1,0 +1,39 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a [routerLink]="['/']">Home</a></li>
+    <li class="breadcrumb-item" [routerLink]="['/requests']">Requests</li>
+    <li class="breadcrumb-item active" aria-current="page">{{ request.badgeType}}</li>
+  </ol>
+</nav>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="align-self-center">
+      <h1 style="text-align: center;">Badge verification request</h1>
+
+      <div class="card" style="margin-top: 20px;">
+        <div class="card-body">
+          <h5 class="card-title">DUO wants to verify your "Dutch nationality" badge</h5>
+          <p class="card-text">
+            They want to verify this badge to:<br>
+            <strong>- determine whether you are a candidate for student grants</strong><br/><br/>
+            <span style="padding: 2px; background-color: rgb(219, 52, 68); color: white">Rejecting</span> this
+            verification will
+            result in:<br/>
+            <strong>- invalid application for student grants</strong><br/><br/>
+            <span style="padding: 2px; background-color: rgb(40, 167, 69); color: white">Accepting</span> this
+            verification will
+            result in:<br/>
+            <strong>- validation of your nationality by DUO</strong><br/>
+          </p>
+
+          <div class="float-left"><a href="#" class="btn btn-success">Accept</a></div>
+          <div class="float-right"><a href="#" class="btn btn-danger">Reject</a></div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "badgeId": 1,
+    "titel": "Nationality",
+    "instelling": "GBA",
+    "reden": "Emigratie",
+    "periode": {
+      "van": "01-01-2019",
+      "tot": "01-02-2019"
+    },
+    "gemachtigde": "Klaas",
+    "valid": "true",
+    "status": "submitted"
+  },
+  {
+    "id": 2,
+    "badgeId": 1,
+    "titel": "Rijbewijs B",
+    "instelling": "GBA",
+    "reden": "Betalen boete",
+    "periode": {
+      "van": "02-01-2019",
+      "tot": "06-01-2019"
+    },
+    "gemachtigde": "Piet",
+    "valid": "false",
+    "status": "submitted"
+  },
+  {
+    "id": 3,
+    "badgeId": 2,
+    "titel": "Rijbewijs B",
+    "instelling": "GBA",
+    "reden": "Betalen boete",
+    "periode": {
+      "van": "02-01-2018",
+      "tot": "06-01-2018"
+    },
+    "gemachtigde": "Piet",
+    "valid": "false",
+    "status": "invalid"
+  }
+]

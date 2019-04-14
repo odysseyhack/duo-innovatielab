@@ -1,0 +1,81 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#" (click)="navigeerNaar($event, '')">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Create badge</li>
+  </ol>
+</nav>
+
+<!--
+<div style="text-align:center">
+  <h1>
+
+  </h1>
+
+  <button (click)="login($event)" badgeType="button" class="btn btn-light">Login</button>
+
+  &lt;!&ndash;TODO invulvelden + button &ndash;&gt;
+
+</div>
+-->
+
+<div class="container">
+
+  <div class="align-self-center">
+    <div id="divIssuer" class="bg-warning">
+      <h2><i class="fas fa-landmark fa-1x"></i> ISSUER PAGE</h2>
+      <h1>Create badge</h1></div>
+    <form>
+      <div class="form-group">
+        <label for="nameInput">Name</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="badge.name" id="nameInput"
+               placeholder="Badge for Dutch citizenship">
+      </div>
+      <div class="form-group">
+        <label for="shortDescriptionInput">Short description</label>
+        <textarea class="form-control" id="shortDescriptionInput" name="description"
+                  [(ngModel)]="badge.shortDescription"
+                  placeholder="This badge is for...">
+          </textarea>
+      </div>
+      <div class="form-group">
+        <label for="issuerInput">Issuer</label>
+        <input type="text" class="form-control" name="issuer" [(ngModel)]="badge.issuer" id="issuerInput"
+               placeholder="Dutch citizenship issuer">
+      </div>
+      <div class="form-group">
+        <label for="recipientInput">Recipient</label>
+        <input type="text" class="form-control" name="recipient" [(ngModel)]="badge.recipient" id="recipientInput"
+               placeholder="A citizen">
+      </div>
+      <div class="form-group">
+        <label for="issueDateInput">Issue date</label>
+        <input type="date" class="form-control" name="issueDate" [(ngModel)]="badge.issueDate" id="issueDateInput"
+               placeholder="A citizen">
+      </div>
+
+      <div class="form-group">
+        <button (click)="create()" class="btn btn-warning">Create</button>
+      </div>
+
+      <div *ngIf="badgeData != ''">
+        <div class="form-group">
+          <label for="badgeTextInput">Badge data</label>
+          <textarea class="form-control" id="badgeTextInput" [value]="badgeData"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="secretInput">Secret</label>
+          <input class="form-control" id="secretInput" name="secret" [(ngModel)]="badge.saltPrivate">
+        </div>
+
+        <div class="form-group">
+          <button (click)="store()" class="btn btn-warning">Store badge</button>
+        </div>
+
+        <div class="form-group" *ngIf="badge.address != undefined">
+          <div class="alert alert-success" role="alert">Contract address on blockchain: {{badge.address}}</div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

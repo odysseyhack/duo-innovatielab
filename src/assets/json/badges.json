@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "Diploma OCA",
+    "shortDescription": "Dit is de badge die aangeeft dat je OCA gehaald hebt",
+    "issuer": "Oracle",
+    "recipient": "Henk de Haver",
+    "issueDate": "13-04-2019",
+    "saltPrivate": "uniekeSaltPrivate1",
+    "saltPublic": "uniekeSaltPublic1",
+    "status": "submitted"
+  },
+  {
+    "id": 2,
+    "name": "Diploma OCP",
+    "shortDescription": "Dit is de badge die aangeeft dat je OCP gehaald hebt",
+    "issuer": "Oracle",
+    "recipient": "Henk de Haver",
+    "issueDate": "13-04-2019",
+    "saltPrivate": "uniekeSaltPrivate2",
+    "saltPublic": "uniekeSaltPublic2",
+    "status": "accepted"
+  },
+  {
+    "id": 3,
+    "name": "Nationality",
+    "shortDescription": "Dit is de badge die aangeeft dat je Nederlander bent",
+    "issuer": "GBA",
+    "recipient": "Henk de Haver",
+    "issueDate": "01-04-2000",
+    "saltPrivate": "uniekeSaltPrivate3",
+    "saltPublic": "uniekeSaltPublic3",
+    "status": "refused"
+  },
+  {
+    "id": 4,
+    "name": "Driver license B",
+    "shortDescription": "Dit is de badge die aangeeft dat je de trotse bezitterbent van een rijbewijs B",
+    "issuer": "CBR",
+    "recipient": "Henk de Haver",
+    "issueDate": "13-03-2018",
+    "saltPrivate": "uniekeSaltPrivate4",
+    "saltPublic": "uniekeSaltPublic4",
+    "status": "invalid"
+  }
+]

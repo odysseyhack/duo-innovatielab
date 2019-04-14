@@ -1,0 +1,25 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active"><a href="#">Home</a></li>
+  </ol>
+</nav>
+
+<div class="container">
+
+  <div class="row justify-content-center">
+
+    <div class="align-self-center">
+      <h1>Controlling the <<i class="fas fa-male fa-3x " style="color:#d9534f"></i>> in the middle! <br />What do you want to do?</h1>
+      <hr />
+
+      <p><button class="btn btn-warning" (click)="gaNaarPagina($event, 1)">Create badge</button>&nbsp;&nbsp;<i class="fas fa-landmark fa-2x"></i>&nbsp; <em>Issuer creates a
+        badge</em> </p>
+      <p><button class="btn btn-success" (click)="gaNaarPagina($event, 2)">Manage</button>&nbsp;&nbsp;<i class="far fa-user fa-2x"></i>&nbsp; &nbsp; <em>End-user manages his
+      safe</em></p>
+      <p><button class="btn btn-info" (click)="gaNaarPagina($event, 3)">Verify badge</button>&nbsp;&nbsp;<i class="far fa-building fa-2x"></i>&nbsp; &nbsp; <em>Third party wants
+      to verify badge end-user has from issuer</em></p>
+
+    </div>
+  </div>
+
+</div>

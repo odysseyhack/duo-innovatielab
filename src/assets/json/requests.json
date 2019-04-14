@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "badgeId": 1,
+    "badgeType": "Financieel",
+    "subType": "Bruto jaarinkomen 2018",
+    "reason": "Berekenen studiefinanciering",
+    "implications": [
+      "Financieel",
+      "Reputatie"
+    ],
+    "status": "invalid"
+  },
+  {
+    "id": 2,
+    "badgeId": 1,
+    "badgeType": "Nationality",
+    "subType": "NL",
+    "reason": "Huursubsidie aanvraag",
+    "implications": [
+      "Financieel",
+      "Reputatie"
+    ],
+    "status": "submitted"
+  },
+  {
+    "id": 3,
+    "badgeId": 2,
+    "badgeType": "Nationality",
+    "subType": "NL",
+    "reason": "Huursubsidie aanvraag",
+    "implications": [
+      "Financieel",
+      "Reputatie"
+    ],
+    "status": "submitted"
+  }
+]

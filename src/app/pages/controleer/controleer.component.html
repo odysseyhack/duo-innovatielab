@@ -1,0 +1,69 @@
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#" (click)="navigeerNaar($event, '')">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Verify badge</li>
+  </ol>
+</nav>
+<div class="container">
+    <div class="align-self-center">
+      <div id="divInstitute" class="bg-info">
+      <h2><i class="far fa-building fa-1x" ></i> INSTITUTE PAGE</h2>
+      <h1>Create badge verification request</h1></div>
+      <form>
+        <div class="form-group">
+          <label for="typeInput">Type Badge</label>
+          <select class="form-control" id="typeInput" name="badgeType" (change)="setRequestBadge($event)">
+            <option value="0">Make a choice..</option>
+            <option value="Nationality">Nationality</option>
+            <option value="Diploma">Diploma</option>
+            <option disabled value="3">Income</option>
+          </select>
+        </div>
+        <div *ngIf="badgeType === 'Nationality'" class="form-group">
+          <label for="typeInput">Which Nationality</label>
+          <select class="form-control" id="typeInput" name="nationalityType" (change)="setRequestRedenNationaliteit($event)" [(ngModel)]="subType">
+            <option value="Dutch">Dutch</option>
+            <option value="American">American</option>
+          </select>
+        </div>
+
+        <div *ngIf="badgeType === 'Nationality'" class="form-group">
+          <label for="typeInput">Which reason for request</label>
+          <select class="form-control" id="typeInput" name="nationalityType" (change)="setRequestRedenNationaliteit($event)" [(ngModel)]="subType">
+            <option value="Dutch">To determine height of Student loan</option>
+            <option value="American">To determine height of Complementary Student loan</option>
+          </select>
+        </div>
+
+        <div *ngIf="badgeType === 'Nationality'" class="form-group">
+          <label for="typeInput">Implications</label><br>
+          <input type="checkbox" value="Financiel risks" (click)="setImplications($event)"/><label>Financiel risks:</label><br>
+          <input type="checkbox" value="Legal risks" (click)="setImplications($event)"/><label>Legal risks:</label>
+        </div>
+
+        <div *ngIf="badgeType === 'Nationality'" class="form-group">
+          <label for="jsonBadgeData">JSON Badge data</label>
+          <textarea class="form-control" id="jsonBadgeData" name="jsonBadgeData"
+                    (change)="setJsonData($event)" placeholder="Copy/paste JSON data">
+          </textarea>
+        </div>
+
+        <div *ngIf="badgeType === 'Nationality'" class="form-group">
+          <label for="contractAddress">Contract address</label>
+          <input type="text" class="form-control" name="contractAddress" [(ngModel)]="contractAddress" id="contractAddress"
+                 placeholder="0x...">
+        </div>
+
+        <div class="form-group">
+          <button (click)="verify()" class="btn btn-info">Verify</button>
+        </div>
+
+        <div class="form-group" *ngIf="receipt != undefined">
+          <div class="alert alert-success" *ngIf="receipt[0] == true" role="alert">{{receipt[1]}}</div>
+          <div class="alert alert-danger" *ngIf="receipt[0] == false" role="alert">{{receipt[1]}}</div>
+        </div>
+      </form>
+    </div>
+
+</div>
