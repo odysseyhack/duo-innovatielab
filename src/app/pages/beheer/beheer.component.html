@@ -5,13 +5,18 @@
   </ol>
 </nav>
 
-<div style="text-align:center">
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="align-self-center">
   <h1>
     Manage badges and authorizations
   </h1>
+      <hr/>
 
-  <button (click)="navigeerNaar($event, 'overzicht-badges')">Badges overview</button>
-  <button (click)="navigeerNaar($event, 'overzicht-authorizations')">Authorizations overview</button>
-  <button (click)="navigeerNaar($event, 'requests')">Requests overview</button>
+  <p><button class="btn btn-info" routerLink="/overzicht-badges">Badges overview</button>&nbsp; <em>End-user views badges</em></p>
+  <p><button class="btn btn-info" routerLink="/overzicht-authorizations">Authorizations overview</button>&nbsp; <em>End-user views granted authorizations</em></p>
+  <p><button class="btn btn-info" routerLink="/requests">Requests overview</button>&nbsp; <em>End-user views incoming requests</em></p>
 
+</div>
+</div>
 </div>
