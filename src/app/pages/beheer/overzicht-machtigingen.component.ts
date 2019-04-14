@@ -4,7 +4,8 @@ import {DatabaseService} from '../../shared/service/database.service';
 import {Authorization} from "../../shared/model/authorization";
 
 @Component({
-  templateUrl: './overzicht-machtigingen.component.html'
+  templateUrl: './overzicht-machtigingen.component.html',
+
 })
 export class OverzichtMachtigingenComponent {
 

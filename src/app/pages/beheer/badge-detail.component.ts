@@ -6,7 +6,8 @@ import {Request} from '../../shared/model/request';
 import {Authorization} from "../../shared/model/authorization";
 
 @Component({
-  templateUrl: './badge-detail.component.html'
+  templateUrl: './badge-detail.component.html',
+
 })
 export class BadgeDetailComponent implements OnInit {
 

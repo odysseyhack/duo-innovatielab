@@ -6,6 +6,7 @@ import {Ethereum} from '../../shared/service/ethereum';
 
 @Component({
   templateUrl: './controleer.component.html'
+
 })
 export class ControleerComponent {
 

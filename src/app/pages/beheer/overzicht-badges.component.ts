@@ -4,7 +4,8 @@ import {DatabaseService} from '../../shared/service/database.service';
 import {Router} from '@angular/router';
 
 @Component({
-  templateUrl: './overzicht-badges.component.html'
+  templateUrl: './overzicht-badges.component.html',
+
 })
 export class OverzichtBadgesComponent implements OnInit {
 

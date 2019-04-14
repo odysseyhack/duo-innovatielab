@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+#divInstitute {
+  background-color: lightblue;
+  border-radius: 25px;
+  text-align: center;
+}
+
+#divClient {
+  background-color: lightcoral;
+  border-radius: 25px;
+  text-align: center;
+
+}/* You can add global styles to this file, and also import other style files */
