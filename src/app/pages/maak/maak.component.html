@@ -21,7 +21,7 @@
 <div class="container">
 
   <div class="align-self-center">
-    <div id="divIssuer">
+    <div id="divIssuer" class="bg-warning">
       <h2><i class="fas fa-landmark fa-1x"></i> ISSUER PAGE</h2>
       <h1>Create badge</h1></div>
     <form>
@@ -54,7 +54,7 @@
       </div>
 
       <div class="form-group">
-        <button (click)="create()" class="btn btn-info">Create</button>
+        <button (click)="create()" class="btn btn-warning">Create</button>
       </div>
 
       <div *ngIf="badgeData != ''">
@@ -69,7 +69,7 @@
         </div>
 
         <div class="form-group">
-          <button (click)="store()" class="btn btn-info">Store</button>
+          <button (click)="store()" class="btn btn-warning">Store badge</button>
         </div>
 
         <div class="form-group" *ngIf="badge.address != undefined">

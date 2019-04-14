@@ -73,8 +73,8 @@
           <p class="card-text">{{request.status}}</p>
         </div>
         <div *ngIf="request.status === 'submitted'">
-          <div class="float-left"><a (click)="refuseRequest(request)" class="btn btn-info">Refuse</a></div>
-          <div class="float-left"><a (click)="acceptRequest(request)" class="btn btn-info">Accept</a></div>
+          <div class="float-left"><a (click)="refuseRequest(request)" class="btn btn-danger">Refuse</a></div>
+          <div class="float-left"><a (click)="acceptRequest(request)" class="btn btn-success">Accept</a></div>
         </div>
       </div>
     </div>
@@ -96,8 +96,8 @@
           <p class="card-text">{{authorization.status}}</p>
         </div>
         <div *ngIf="authorization.status === 'submitted'">
-          <div class="float-left"><a (click)="refuseAuth(authorization)" class="btn btn-info">Refuse</a></div>
-          <div class="float-left"><a (click)="acceptAuth(authorization)" class="btn btn-info">Accept</a></div>
+          <div class="float-left"><a (click)="refuseAuth(authorization)" class="btn btn-danger">Refuse</a></div>
+          <div class="float-left"><a (click)="acceptAuth(authorization)" class="btn btn-success">Accept</a></div>
         </div>
       </div>
     </div>

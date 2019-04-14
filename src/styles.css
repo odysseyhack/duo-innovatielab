@@ -1,18 +1,30 @@
 #divInstitute {
-  background-color: lightblue;
+  color: white;
   border-radius: 25px;
   text-align: center;
 }
 
 #divClient {
-  background-color: lightcoral;
+  color: white;
   border-radius: 25px;
   text-align: center;
 
 }/* You can add global styles to this file, and also import other style files */
 
 #divIssuer {
-  background-color: lightgreen;
+  color: white;
   border-radius: 25px;
   text-align: center;
 }
+
+.buttonInstitute {
+  background-color: lightblue;
+}
+.buttonClient{
+  background-color: lightcoral;
+}
+.buttonIssuer{
+  background-color: lightgreen;
+}
+
+

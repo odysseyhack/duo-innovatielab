@@ -6,10 +6,12 @@
 </nav>
 
 <div style="text-align:center" class="container">
-  <h1>
+  <div id="divClient" class="bg-success">
+
+  <h1><i class="far fa-user fa-1x"></i>
     Requests overview
   </h1>
-
+  </div>
   <div class="card-deck">
     <div *ngFor="let request of requests">
       <div [ngStyle]="request.status !== 'invalid' ? {'opacity':'1'}: {'opacity':'0.5'}" class="card border-dark mb-4"
@@ -19,7 +21,7 @@
           <p class="card-text">Type: {{request.subType}}<br>
             Reden: {{request.reason}}</p>
 
-          <div class="float-left"><a [routerLink]="['/requests', request.id]" class="btn btn-info">View</a></div>
+          <div class="float-left"><a [routerLink]="['/requests', request.id]" class="btn btn-success">View</a></div>
         </div>
       </div>
     </div>
