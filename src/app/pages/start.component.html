@@ -4,19 +4,19 @@
   </ol>
 </nav>
 
-<div style="text-align:center">
-  <h1>
-    Choose function
-  </h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="align-self-center">
+      <h1>What do you want to do?</h1>
+      <hr />
 
-  <button (click)="gaNaarPagina($event, 1)">Create</button>
-  <button (click)="gaNaarPagina($event, 2)">Manage</button>
-  <button (click)="gaNaarPagina($event, 3)">Verify badge</button>
+      <p><button class="btn btn-info" (click)="gaNaarPagina($event, 1)">Create badge</button>&nbsp; <em>Issuer creates a
+      badge</em></p>
+      <p><button class="btn btn-info" (click)="gaNaarPagina($event, 2)">Manage</button>&nbsp; <em>End-user manages his
+      safe</em></p>
+      <p><button class="btn btn-info" (click)="gaNaarPagina($event, 3)">Verify badge</button>&nbsp; <em>Third party wants
+      to verify badge end-user has from issuer</em></p>
 
-  <div style="text-align:center">
-    <p></p>
-    <img src="../../assets/images/rian.jpeg"/>
-    <h2>Cybersecured by Rian - copyright 2019.</h2>
+    </div>
   </div>
-
 </div>
