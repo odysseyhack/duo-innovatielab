@@ -10,3 +10,9 @@
   text-align: center;
 
 }/* You can add global styles to this file, and also import other style files */
+
+#divIssuer {
+  background-color: lightgreen;
+  border-radius: 25px;
+  text-align: center;
+}

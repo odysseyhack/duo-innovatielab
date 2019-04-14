@@ -19,61 +19,63 @@
 -->
 
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="align-self-center">
-      <h1>Create badge</h1>
-      <form>
-        <div class="form-group">
-          <label for="nameInput">Name</label>
-          <input type="text" class="form-control" name="name" [(ngModel)]="badge.name" id="nameInput"
-                 placeholder="Badge for Dutch citizenship">
-        </div>
-        <div class="form-group">
-          <label for="shortDescriptionInput">Short description</label>
-          <textarea class="form-control" id="shortDescriptionInput" name="description" [(ngModel)]="badge.shortDescription"
-                    placeholder="This badge is for...">
+
+  <div class="align-self-center">
+    <div id="divIssuer">
+      <h2><i class="fas fa-landmark fa-1x"></i> ISSUER PAGE</h2>
+      <h1>Create badge</h1></div>
+    <form>
+      <div class="form-group">
+        <label for="nameInput">Name</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="badge.name" id="nameInput"
+               placeholder="Badge for Dutch citizenship">
+      </div>
+      <div class="form-group">
+        <label for="shortDescriptionInput">Short description</label>
+        <textarea class="form-control" id="shortDescriptionInput" name="description"
+                  [(ngModel)]="badge.shortDescription"
+                  placeholder="This badge is for...">
           </textarea>
-        </div>
+      </div>
+      <div class="form-group">
+        <label for="issuerInput">Issuer</label>
+        <input type="text" class="form-control" name="issuer" [(ngModel)]="badge.issuer" id="issuerInput"
+               placeholder="Dutch citizenship issuer">
+      </div>
+      <div class="form-group">
+        <label for="recipientInput">Recipient</label>
+        <input type="text" class="form-control" name="recipient" [(ngModel)]="badge.recipient" id="recipientInput"
+               placeholder="A citizen">
+      </div>
+      <div class="form-group">
+        <label for="issueDateInput">Issue date</label>
+        <input type="date" class="form-control" name="issueDate" [(ngModel)]="badge.issueDate" id="issueDateInput"
+               placeholder="A citizen">
+      </div>
+
+      <div class="form-group">
+        <button (click)="create()" class="btn btn-info">Create</button>
+      </div>
+
+      <div *ngIf="badgeData != ''">
         <div class="form-group">
-          <label for="issuerInput">Issuer</label>
-          <input type="text" class="form-control" name="issuer" [(ngModel)]="badge.issuer" id="issuerInput"
-                 placeholder="Dutch citizenship issuer">
-        </div>
-        <div class="form-group">
-          <label for="recipientInput">Recipient</label>
-          <input type="text" class="form-control" name="recipient" [(ngModel)]="badge.recipient" id="recipientInput"
-                 placeholder="A citizen">
-        </div>
-        <div class="form-group">
-          <label for="issueDateInput">Issue date</label>
-          <input type="date" class="form-control" name="issueDate" [(ngModel)]="badge.issueDate" id="issueDateInput"
-                 placeholder="A citizen">
+          <label for="badgeTextInput">Badge data</label>
+          <textarea class="form-control" id="badgeTextInput" [value]="badgeData"></textarea>
         </div>
 
         <div class="form-group">
-          <button (click)="create()" class="btn btn-info">Create</button>
+          <label for="secretInput">Secret</label>
+          <input class="form-control" id="secretInput" name="secret" [(ngModel)]="badge.saltPrivate">
         </div>
 
-        <div *ngIf="badgeData != ''">
-          <div class="form-group">
-            <label for="badgeTextInput">Badge data</label>
-            <textarea class="form-control" id="badgeTextInput" [value]="badgeData"></textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="secretInput">Secret</label>
-            <input class="form-control" id="secretInput" name="secret" [(ngModel)]="badge.saltPrivate">
-          </div>
-
-          <div class="form-group">
-            <button (click)="store()" class="btn btn-info">Store</button>
-          </div>
-
-          <div class="form-group">
-            <label id="contractAddress"></label>
-          </div>
+        <div class="form-group">
+          <button (click)="store()" class="btn btn-info">Store</button>
         </div>
-      </form>
-    </div>
+
+        <div class="form-group">
+          <label id="contractAddress"></label>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
