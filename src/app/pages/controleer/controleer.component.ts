@@ -17,6 +17,7 @@ export class ControleerComponent {
   jsonData = '';
   contractAddress = '';
   private _ethereum: any;
+  receipt = undefined;
 
   constructor(private router: Router,
               private databaseService: DatabaseService,
@@ -46,7 +47,7 @@ export class ControleerComponent {
     this.jsonData = (event.target as HTMLTextAreaElement).value;
   }
 
-  create() {
+  verify() {
     let request = new Request();
     request.badgeType = this.badgeType;
     request.subType = this.subType;
@@ -62,7 +63,7 @@ export class ControleerComponent {
 
     verificationResult.then((receipt) => {
       console.log(receipt);
-      document.getElementById("verificationResult").innerHTML = receipt[1];
+      this.receipt = receipt;
     });
 
     this.databaseService.saveRequest(request);

@@ -56,11 +56,12 @@
         </div>
 
         <div class="form-group">
-          <button (click)="create()" class="btn btn-info">Create</button>
+          <button (click)="verify()" class="btn btn-info">Verify</button>
         </div>
 
-        <div class="form-group">
-          <label id="verificationResult"></label>
+        <div class="form-group" *ngIf="receipt != undefined">
+          <div class="alert alert-success" *ngIf="receipt[0] == true" role="alert">{{receipt[1]}}</div>
+          <div class="alert alert-danger" *ngIf="receipt[0] == false" role="alert">{{receipt[1]}}</div>
         </div>
       </form>
     </div>

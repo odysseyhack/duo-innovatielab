@@ -72,8 +72,8 @@
           <button (click)="store()" class="btn btn-info">Store</button>
         </div>
 
-        <div class="form-group">
-          <label id="contractAddress"></label>
+        <div class="form-group" *ngIf="badge.address != undefined">
+          <div class="alert alert-success" role="alert">Contract address on blockchain: {{badge.address}}</div>
         </div>
       </div>
     </form>

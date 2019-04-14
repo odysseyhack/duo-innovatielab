@@ -39,8 +39,6 @@ export class MaakComponent {
     let hash = that.hashBadge(that.badgeData + that.badge.saltPrivate);
     console.log("Badge hash = " + hash);
 
-    document.getElementById("contractAddress").innerHTML = "Storing the badge on blockchain. Please wait...";
-
     const contractAddress = this._ethereum.storeOnBlockchain(hash);
     contractAddress.then(function(result) {
       that.badge.address = result;
@@ -48,7 +46,7 @@ export class MaakComponent {
 
       sessionStorage.setItem(result, hash);
 
-      document.getElementById("contractAddress").innerHTML = "Contract address on blockchain: " + result;
+      //document.getElementById("contractAddress").innerHTML = "Contract address on blockchain: " + result;
     });
 
   }
