@@ -62,6 +62,7 @@ export class ControleerComponent {
 
     verificationResult.then((receipt) => {
       console.log(receipt);
+      document.getElementById("verificationResult").innerHTML = receipt[1];
     });
 
     this.databaseService.saveRequest(request);
